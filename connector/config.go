@@ -1,7 +1,6 @@
 package connector
 
 import (
-	"fmt"
 	"os"
 	"strconv"
 	"time"
@@ -164,7 +163,5 @@ func BuildConfig() *mysql.Config {
 		}
 		userConfig.RejectReadOnly = RejectReadOnly
 	}
-
-	fmt.Print(userConfig)
 	return userConfig
 }
