@@ -16,7 +16,7 @@ func getConnector() (driver.Connector, error) {
 func GetDb() (*sql.DB, error) {
 	var db *sql.DB
 	var err error
-	if connector, err := getConnector(); err != nil {
+	if connector, err := getConnector(); err == nil {
 		db = sql.OpenDB(connector)
 	}
 	return db, err
