@@ -164,6 +164,7 @@ func BuildConfig() *mysql.Config {
 		}
 		userConfig.RejectReadOnly = RejectReadOnly
 	}
-	
+
+	fmt.Print(userConfig)
 	return userConfig
 }
