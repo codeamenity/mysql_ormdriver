@@ -6,8 +6,8 @@ import (
 	"fmt"
 )
 
-func GetAllTablesStmnt(ctx context.Context, db *sql.DB) (*sql.Stmt, error) {
-	statement := fmt.Sprintf("select * from information_schema.tables")
+func GetTableStmnt(ctx context.Context, db *sql.DB) (*sql.Stmt, error) {
+	statement := fmt.Sprintf("select * from information_schema.tables where TABLE_SCHEMA=? and TABLE_NAME=?")
 	stmt, err := db.PrepareContext(ctx, statement)
 	return stmt, err
 }
